@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import ProfileIcon from 'react-icons/lib/md/person-outline';
 
 import './Compose.css';
@@ -21,6 +21,11 @@ export default class Compose extends Component {
   }
 
   createPost() {
+    const {text} = this.state
+    const {createPostfn} = this.props
+
+    createPostfn(text)
+    this.setState({text: ''})
 
   }
 
